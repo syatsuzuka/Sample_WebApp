@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Sample Web App</title>
+
+<script type="text/javascript" src="js/sample.js"></script>
+<link rel="stylesheet" type="text/css" href="css/sample.css" />
+ 
+</head>
+
+<body>
+
+<h1>GUI Components for Testing</h1>
+
+<fieldset>
+
+<legend>HTML4.01 Components</legend>
+
+<form name="sample">
+
+<table>
+<tr>
+	<td>
+		<label for="test_button">Button</label>
+	</td>
+	<td class="component">
+		<input type="button" name="test_button" value="Button" onclick="change_button_value()" />
+	</td>
+	<td class="value">
+		<span id="button_value">0</span>
+	</td>
+</tr>
+	
+<tr>
+	<td rowspan="3">
+		<label for="test_radio">Radio Button</label>
+	</td>
+
+	<td class="component">
+		<input type="radio" name="test_radio" onclick="change_radio_value(0)"> RadioButton1
+	</td>
+	<td class="value"  rowspan="3">
+		<span id="radio_value")>0</span>
+	</td>
+</tr>
+
+<tr>
+	<td class="component">
+		<input type="radio" name="test_radio" onclick="change_radio_value(1)"> RadioButton2
+	</td>
+</tr>
+
+<tr>
+	<td class="component">
+		<input type="radio" name="test_radio" onclick="change_radio_value(2)"> RadioButton3
+    </td>
+</tr>
+
+<tr>
+	<td rowspan="3">
+		<label for="test_checkbox">Check Box</label>
+	</td>
+	<td class="component">
+		<input type="checkbox" name="test_checkbox_1" onclick="change_check_value(0)" /> CheckBox1
+	</td>
+	<td class="value">
+		<span id="check_value_1")></span>
+	</td>
+</tr>
+
+<tr>
+	<td class="component">
+		<input type="checkbox" name="test_checkbox_2" onclick="change_check_value(1)" /> CheckBox2
+	</td>
+	<td class="value">
+		<span id="check_value_2")></span>
+	</td>
+</tr>
+
+<tr>
+	<td class="component">
+		<input type="checkbox" name="test_checkbox_3" onclick="change_check_value(2)" /> CheckBox3
+    </td>
+	<td class="value">
+		<span id="check_value_3")></span>
+	</td>
+</tr>
+	
+</table>
+</form>
+</fieldset>
+
+<br>
+
+<fieldset>
+<legend>HTML5 Components</legend>
+</fieldset>
+
+<br>
+
+<fieldset>
+<legend>Other Components</legend>
+</fieldset>
+
+</body>
+
+</html>
+

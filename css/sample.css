@@ -1,0 +1,13 @@
+fieldset{
+	border: 1px solid #000000; 
+	padding: 10px;
+}
+
+td.component{
+	width: 200px;
+}
+
+td.value{
+	background-color: #eeeeee;
+	width: 50px;
+}
