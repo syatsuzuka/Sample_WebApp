@@ -5,8 +5,18 @@
 <head>
 <title>Sample Web App</title>
 
-<script type="text/javascript" src="js/sample.js"></script>
-<link rel="stylesheet" type="text/css" href="css/sample.css" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.2/themes/default/style.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.2/jstree.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap-4.0.0.min.css" />
+<link rel="stylesheet" type="text/css" href="css/style-3.2.1.min.css" />
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+<script type="text/javascript" src="js/bootstrap-4.0.0.min.js"></script>
+<script type="text/javascript" src="js/jstree-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/event.js"></script>
+
  
 </head>
 
@@ -14,32 +24,53 @@
 
 <h1>GUI Components for Testing</h1>
 
+
+<div class="container">
+<input type="checkbox" id="html4_disp" class="disp"  name="html4" checked> html4
+<input type="checkbox" id="html5_disp" class="disp"  name="html5" checked> html5
+<input type="checkbox" id="javascript_disp" class="disp" name="javascript" checked> javascript
+</div>
+
+<!--======= HTML4 Components =======-->
+
+<div id="html4" class="container">
+
 <fieldset>
 
-<legend>HTML4.01 Components</legend>
+<legend>HTML4 Components</legend>
 
-<form name="sample">
+<form name="html4_form">
+
+<!--======= Left Panel =======-->
+
+<div class="left">
 
 <table>
+
+<!-- 1st line -->
+
 <tr>
 	<td>
-		<label for="test_button">Button</label>
+		<label for="label_button">Button</label>
 	</td>
 	<td class="component">
-		<input type="button" name="test_button" value="Button" onclick="change_button_value()" />
+		<input type="button" name="label_button" value="Button" onclick="change_button_value()" />
 	</td>
 	<td class="value">
 		<span id="button_value">0</span>
 	</td>
 </tr>
+
+
+<!-- 2nd line -->
 	
 <tr>
 	<td rowspan="3">
-		<label for="test_radio">Radio Button</label>
+		<label for="label_radio">Radio Button</label>
 	</td>
 
 	<td class="component">
-		<input type="radio" name="test_radio" onclick="change_radio_value(0)"> RadioButton1
+		<input type="radio" name="label_radio" onclick="change_radio_value(0)"> RadioButton1
 	</td>
 	<td class="value"  rowspan="3">
 		<span id="radio_value")>0</span>
@@ -48,22 +79,25 @@
 
 <tr>
 	<td class="component">
-		<input type="radio" name="test_radio" onclick="change_radio_value(1)"> RadioButton2
+		<input type="radio" name="label_radio" onclick="change_radio_value(1)"> RadioButton2
 	</td>
 </tr>
 
 <tr>
 	<td class="component">
-		<input type="radio" name="test_radio" onclick="change_radio_value(2)"> RadioButton3
+		<input type="radio" name="label_radio" onclick="change_radio_value(2)"> RadioButton3
     </td>
 </tr>
 
+
+<!-- 3rd line -->
+
 <tr>
 	<td rowspan="3">
-		<label for="test_checkbox">Check Box</label>
+		<label for="label_checkbox">Check Box</label>
 	</td>
 	<td class="component">
-		<input type="checkbox" name="test_checkbox_1" onclick="change_check_value(0)" /> CheckBox1
+		<input type="checkbox" name="label_checkbox_1" onclick="change_check_value(0)" /> CheckBox1
 	</td>
 	<td class="value">
 		<span id="check_value_1")></span>
@@ -72,7 +106,7 @@
 
 <tr>
 	<td class="component">
-		<input type="checkbox" name="test_checkbox_2" onclick="change_check_value(1)" /> CheckBox2
+		<input type="checkbox" name="label_checkbox_2" onclick="change_check_value(1)" /> CheckBox2
 	</td>
 	<td class="value">
 		<span id="check_value_2")></span>
@@ -81,7 +115,7 @@
 
 <tr>
 	<td class="component">
-		<input type="checkbox" name="test_checkbox_3" onclick="change_check_value(2)" /> CheckBox3
+		<input type="checkbox" name="label_checkbox_3" onclick="change_check_value(2)" /> CheckBox3
     </td>
 	<td class="value">
 		<span id="check_value_3")></span>
@@ -89,20 +123,218 @@
 </tr>
 	
 </table>
+
+</div>
+
+
+<!--======= Right Panel =======-->
+
+<div class="right">
+
+<table>
+
+<!-- 1st line -->
+
+<tr>
+	<td>
+		Select
+	</td>
+	<td class="component">
+		<select name="label_select" onChange="change_select_value()">
+			<option value="a">a</option>
+			<option value="b">b</option>
+			<option value="c">c</option>
+			<option value="d">d</option>
+			<option value="e">e</option>
+		</select>
+	</td>
+	<td class="value">
+		<span id="select_value"></span>
+	</td>
+</tr>
+
+
+<!-- 2nd line -->
+
+<tr>
+	<td>
+		Textfield
+	</td>
+	<td class="component">
+		<input type="text" name="label_text" onInput="change_text_value()" />
+	</td>
+	<td class="value">
+		<span id="text_value"></span>
+	</td>
+</tr>
+
+
+<!-- 3rd line -->
+
+<tr>
+	<td>
+		Textarea
+	</td>
+	<td class="component">
+		<textarea name="label_textarea" onInput="change_textarea_value()"></textarea>
+	</td>
+	<td class="value">
+		<span id="textarea_value"></span>
+	</td>
+</tr>
+
+<!-- 4th line -->
+<tr>
+	<td>
+		Table
+	</td>
+	<td class="component">
+		<table border="1">
+			<tr>
+				<th>Col.A</th>
+				<th>Col.B</th>
+				<th>Col.C</th>
+			</tr>
+
+			<tr>
+				<td>1</td>
+				<td>a</td>
+				<td>aaa</td>
+			</tr>
+				
+            <tr>
+                <td>2</td>
+                <td>b</td>
+                <td>bbb</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>c</td>
+                <td>ccc</td>
+            </tr>
+		</table>
+	</td>
+
+	<td>
+	</td>
+</tr>
+	
+</table>
+
+</div>
 </form>
 </fieldset>
 
-<br>
+</div>
+
+
+<!--======= HTML5 Components =======-->
+
+<div id="html5" class="container">
 
 <fieldset>
+
 <legend>HTML5 Components</legend>
-</fieldset>
 
-<br>
+<form name="html5_form">
+
+
+<!--======= Left Panel =======-->
+
+<div class="left">
+
+<table>
+
+<!-- 1st line -->
+
+<tr>
+    <td>
+        <label for="label_datalist">DataList</label>
+    </td>
+    <td class="component">
+		<input type="text" name="datalist" list="data" onchange="change_datalist_value()">
+
+		<datalist id="data">
+		<option value="a"></option>
+		<option value="b"></option>
+		<option value="c"></option>
+		<option value="d"></option>
+		<option value="e"></option>
+		</datalist>
+	</td>
+    <td class="value">
+        <span id="datalist_value"></span>
+    </td>
+</tr>
+
+</table>
+
+</div>
+
+<!--======= Right Panel =======-->
+
+<div class="right">
+
+<table>
+</table>
+</div>
+</form>
+</fieldset>
+</div>
+
+
+
+<!--======= Javascript Components =======-->
+
+<div id="javascript" class="container">
 
 <fieldset>
-<legend>Other Components</legend>
+
+<legend>Javascript Components</legend>
+
+<form name="javascript_form">
+
+
+<!--======= Left Panel =======-->
+
+<div class="left">
+
+<table>
+
+<!-- 1st line -->
+
+<tr>
+    <td>
+        <label for="label_jstree">JsTree</label>
+    </td>
+    <td class="component">
+		<div id="jstree">
+			<ul>
+				<li>a
+					<ul>
+						<li data-jstree='{"icon": "jstree-file"}'>b
+							<ul>
+								<li data-jstree='{"icon": "jstree-file"}'>c</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+    </td>
+    <td class="value">
+        <span id="jstree_value"></span>
+    </td>
+</tr>
+
+</table>
+
+</div>
+</form>
 </fieldset>
+</div>
+
 
 </body>
 

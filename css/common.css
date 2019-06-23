@@ -1,3 +1,17 @@
+div.container{
+	padding: 10px;
+}
+
+div.left{
+	width: 50%;
+	display: inline-block;
+}
+
+div.right{
+	width: auto;
+	display: inline-block;
+}
+
 fieldset{
 	border: 1px solid #000000; 
 	padding: 10px;
